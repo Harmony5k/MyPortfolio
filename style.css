@@ -1,0 +1,223 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #e8f5f1; /* Light green from the picture */
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.hero {
+  height: 100vh;
+  background-color: #6fc4b6; /* Light green background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #ff9f80; /* Matching the shirt color */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-top: 30;
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.social-links a {
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: #6fc4b6; /* Matching the website colors */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      background-color: #333;
+      top: 60px;
+      right: 0;
+      width: 100%;
+  }
+
+  .nav-links li {
+      margin: 15px 0;
+      text-align: center;
+  }
+
+  .hero h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero p {
+      font-size: 1.2rem;
+  }
+}
+/* Additional styling for the View More button */
+.view-more {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.view-more .btn {
+  background-color: #ff9f80; /* Same color as the other buttons */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.view-more .btn:hover {
+  background-color: #e88d70; /* Slight darkening on hover */
+  transition: background-color 0.3s ease;
+}
+/* Skills & Tools Section */
+.skills {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+}
+
+.skill-set {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.skill {
+  width: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skill-bar {
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0;
+  height: 10px;
+}
+
+.progress {
+  background-color: #6fc4b6; /* Matches the site's color scheme */
+  height: 100%;
+  border-radius: 10px;
+}
+
+.skill span {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-top: 5px;
+}
+
+.skill h3 {
+  color: #333;
+  font-size: 1.2rem;
+}
