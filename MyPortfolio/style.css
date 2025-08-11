@@ -1,223 +1,290 @@
-/* Global Styles */
+/* --------------------
+   Base & Resets
+-------------------- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background-color: #e8f5f1; /* Light green from the picture */
-  color: #333;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: #fafafa;
+  color: #222;
   line-height: 1.6;
 }
 
+/* --------------------
+   Layout Helpers
+-------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+section {
+  padding: 4rem 0;
+}
+h1, h2, h3 {
+  font-weight: 700;
+  text-align: center;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6600, #ff3366);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* --------------------
+   Header & Navigation
+-------------------- */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
+  background: linear-gradient(90deg, #ff6600, #ff3366);
+  color: white;
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
-
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
 }
-
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-links li {
-  margin-left: 20px;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
+.brand {
+  font-size: 1.4rem;
   font-weight: bold;
 }
-
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
 .menu-icon {
   display: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.hero {
-  height: 100vh;
-  background-color: #6fc4b6; /* Light green background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding-top: 100px;
-}
-
-.profile-image {
-  border-radius: 50%;
-  max-width: 200px;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  color: #fff;
-}
-
-.hero p {
   font-size: 1.5rem;
-  color: #fff;
-  margin: 20px 0;
-}
-
-.btn {
-  background-color: #ff9f80; /* Matching the shirt color */
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  background: none;
   border: none;
+  color: white;
   cursor: pointer;
-  margin-top: 30;
 }
 
-section {
-  padding: 80px 20px;
+/* --------------------
+   Hero Section
+-------------------- */
+.hero {
+  background: linear-gradient(135deg, #ff6600, #ff3366);
+  color: white;
+  text-align: center;
+  padding: 5rem 1.25rem;
+}
+.hero img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.hero-sub {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+/* --------------------
+   Buttons
+-------------------- */
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff6600, #ff3366);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 51, 102, 0.25);
+}
+.btn.ghost {
+  background: white;
+  color: #ff3366;
+  border: 2px solid #ff3366;
+}
+
+/* --------------------
+   About Section
+-------------------- */
+.about {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* --------------------
+   Skills Section
+-------------------- */
+.skill-set {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.skill {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+/* --------------------
+   Experience Section
+-------------------- */
+.experience-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
   text-align: center;
 }
+.experience-item .dates {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
 
+/* --------------------
+   Portfolio Section
+-------------------- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
-
-.project img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.project h3 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.social-links a {
-  margin-right: 15px;
-  font-size: 1.5rem;
-  color: #6fc4b6; /* Matching the website colors */
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-links {
-      display: none;
-  }
-
-  .menu-icon {
-      display: block;
-  }
-
-  .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      background-color: #333;
-      top: 60px;
-      right: 0;
-      width: 100%;
-  }
-
-  .nav-links li {
-      margin: 15px 0;
-      text-align: center;
-  }
-
-  .hero h1 {
-      font-size: 2.5rem;
-  }
-
-  .hero p {
-      font-size: 1.2rem;
-  }
-}
-/* Additional styling for the View More button */
-.view-more {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.view-more .btn {
-  background-color: #ff9f80; /* Same color as the other buttons */
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.view-more .btn:hover {
-  background-color: #e88d70; /* Slight darkening on hover */
-  transition: background-color 0.3s ease;
-}
-/* Skills & Tools Section */
-.skills {
-  background-color: #f4f4f4;
-  padding: 50px 20px;
-}
-
-.skill-set {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.skill {
-  width: 200px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.skill-bar {
-  background-color: #ddd;
+.project {
+  background: white;
   border-radius: 10px;
   overflow: hidden;
-  position: relative;
-  margin: 10px 0;
-  height: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.project img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.project:hover {
+  transform: translateY(-5px);
+}
+.project:hover img {
+  transform: scale(1.05);
+}
+.project figcaption {
+  padding: 1rem;
+  font-weight: 600;
 }
 
-.progress {
-  background-color: #6fc4b6; /* Matches the site's color scheme */
-  height: 100%;
-  border-radius: 10px;
+/* --------------------
+   Contact Section
+-------------------- */
+.contact .contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.social-links {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.social-links a {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: #ff3366;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: #ff6600;
 }
 
-.skill span {
-  font-weight: bold;
-  color: #333;
-  display: block;
-  margin-top: 5px;
+/* --------------------
+   Footer
+-------------------- */
+footer {
+  background: linear-gradient(90deg, #ff6600, #ff3366);
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
-.skill h3 {
-  color: #333;
-  font-size: 1.2rem;
+/* --------------------
+   Responsive Styles
+-------------------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 1.25rem;
+    background: linear-gradient(90deg, #ff6600, #ff3366);
+    border-radius: 10px;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-icon {
+    display: block;
+  }
 }
